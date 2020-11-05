@@ -1,33 +1,25 @@
-apiVersion: v1
-kind: Service
+---
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: hello-node
-  namespace: test
+  creationTimestamp: null
   labels:
     app: hello-node
 spec:
-  type: LoadBalancer
-  ports:
-  - port: 8080
-    name: http
-  selector:
-    app: hello-node
----
-apiVersion: extensions/v1beta1
-kind: Deployment
-metadata:
-  name: hello-node
-  namespace: test
-spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: hello-node
+    name: hello-node
+  strategy: {}
   template:
     metadata:
+      creationTimestamp: null
       labels:
         app: hello-node
     spec:
       containers:
       - name: hello-node
         image: gcr.io/google_containers/echoserver:1.4
-        imagePullPolicy: IfNotPresent
-        ports:
-        - containerPort: 8080
+        resources: {}
+---
