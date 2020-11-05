@@ -1,33 +1,29 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: hello-node
-  namespace: test
-  labels:
-    app: hello-node
-spec:
-  type: LoadBalancer
-  ports:
-  - port: 8080
-    name: http
-  selector:
-    app: hello-node
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-node
-  namespace: test
+  creationTimestamp: null
+  labels:
+    app: bgd
+  name: bgd
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: bgd
+    name: hello-node
+  strategy: {}
   template:
     metadata:
+      creationTimestamp: null
       labels:
-        app: hello-node
+        app: bgd
     spec:
       containers:
-      - name: hello-node
-        image: gcr.io/google_containers/echoserver:1.4
-        imagePullPolicy: IfNotPresent
-        ports:
-        - containerPort: 8080
+      - image: quay.io/redhatworkshops/bgd:latest
+        name: bgd
+        env:
+        - name: COLOR
+          value: "blue"        
+        resources: {}
+---
