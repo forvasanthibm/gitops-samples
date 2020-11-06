@@ -16,6 +16,6 @@ spec:
     weight: 100
 status:
   ingress:
-  - condition:
+  - conditions:
     - status: "True"
       type: Admitted
