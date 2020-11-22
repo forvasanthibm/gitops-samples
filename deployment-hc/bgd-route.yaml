@@ -10,6 +10,9 @@ spec:
   host: bgd.hc.rohbas11-in.container-crush-01-4044f3a4e314f4bcb433696c70d13be9-0000.che01.containers.appdomain.cloud
   port:
     targetPort: 8080
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Allow
   to:
     kind: Service
     name: bgd-hc
