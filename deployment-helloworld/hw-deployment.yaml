@@ -5,7 +5,7 @@ metadata:
   creationTimestamp: null
   labels:
     app: helloworld
-  name: rohbas11-in
+  name: helloworld
 spec:
   replicas: 1
   selector:

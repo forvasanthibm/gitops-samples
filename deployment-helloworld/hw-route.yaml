@@ -3,8 +3,8 @@ kind: Route
 metadata: 
   creationTimestamp: null
   labels:
-    app: bgd
-  name: bgd
+    app: helloworld
+  name: helloworld
   namespace: rohbas11-in
 spec:
   host: hw.demo.rohbas11-in.container-crush-01-4044f3a4e314f4bcb433696c70d13be9-0000.che01.containers.appdomain.cloud
@@ -15,7 +15,7 @@ spec:
     insecureEdgeTerminationPolicy: Allow
   to:
     kind: Service
-    name: bgd
+    name: helloworld
     weight: 100
 status:
   ingress:
