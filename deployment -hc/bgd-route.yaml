@@ -3,16 +3,16 @@ kind: Route
 metadata: 
   creationTimestamp: null
   labels:
-    app: bgd
-  name: bgd
-  namespace: bgd
+    app: bgd-hc
+  name: bgd-hc
+  namespace: bgd-hc
 spec:
-  host: bgd.rohbas11-in.container-crush-01-4044f3a4e314f4bcb433696c70d13be9-0000.che01.containers.appdomain.cloud
+  host: bgd.hc.rohbas11-in.container-crush-01-4044f3a4e314f4bcb433696c70d13be9-0000.che01.containers.appdomain.cloud
   port:
     targetPort: 8080
   to:
     kind: Service
-    name: bgd
+    name: bgd-hc
     weight: 100
 status:
   ingress:
