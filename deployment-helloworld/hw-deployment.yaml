@@ -23,6 +23,6 @@ spec:
         name: helloworld
         env:
         - name: color
-          value: "red"        
+          value: "brown"        
         resources: {}
 ---
